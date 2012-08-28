@@ -1,5 +1,4 @@
 {% extends "admin/change_list.html" %}
-{% load admin_static %}
 
 
 {% block extrahead %}
@@ -21,11 +20,11 @@
     float: left;
     text-indent: -1000em;
     margin: -1px 6px -2px 0;
-    background: url({% static 'admin/img/selector-icons.gif' %}) 0 -161px no-repeat;
+    background: url('{{ STATIC_URL }}admin/img/selector-icons.gif') 0 -161px no-repeat;
 }
 
 .tree_expanded .tree_expand {
-    background: url({% static 'admin/img/selector-icons.gif' %}) 0 -83px no-repeat;
+    background: url('{{ STATIC_URL }}admin/img/selector-icons.gif') 0 -83px no-repeat;
 }
 
 .tree_leaf {
@@ -52,16 +51,16 @@
 }
 
 .tree_actions_up {
-    background: url({% static 'admin/img/selector-icons.gif' %}) 0 -5px no-repeat;
+    background: url('{{ STATIC_URL }}admin/img/selector-icons.gif') 0 -5px no-repeat;
 }
 .tree_actions_down {
-    background: url({% static 'admin/img/selector-icons.gif' %}) 0 -57px no-repeat;
+    background: url('{{ STATIC_URL }}admin/img/selector-icons.gif') 0 -57px no-repeat;
 }
 .tree_actions_left {
-    background: url({% static 'admin/img/selector-icons.gif' %}) 0 -109px no-repeat;
+    background: url('{{ STATIC_URL }}admin/img/selector-icons.gif') 0 -109px no-repeat;
 }
 .tree_actions_right {
-    background: url({% static 'admin/img/selector-icons.gif' %}) 0 -161px no-repeat;
+    background: url('{{ STATIC_URL }}admin/img/selector-icons.gif') 0 -161px no-repeat;
 }
 
 </style>
@@ -69,8 +68,8 @@
 <script type="text/javascript">
     var jQuery = django.jQuery;
 </script>
-<script src="{% static 'mptt_treechangelist/js/jquery.cookie.js' %}"></script>
-<script src="{% static 'mptt_treechangelist/js/treechangelist.js' %}"></script>
+<script src="{{ STATIC_URL }}mptt_treechangelist/js/jquery.cookie.js"></script>
+<script src="{{ STATIC_URL }}mptt_treechangelist/js/treechangelist.js"></script>
 <script type="text/javascript">
     jQuery.noConflict(true);
     TreeChangelist.csrf_token("{{ csrf_token }}");
